@@ -1,0 +1,121 @@
+*{
+   margin: 0 auto;
+  font-size: 16px;
+  color:#616161;
+}
+/*body{
+	min-height:889px;
+}*/
+a,li{
+	list-style: none;
+	text-decoration: none;
+}
+
+.all{
+	display: flex;
+}
+/*PC端*/
+.gamestart{
+	text-align: center;
+	width: 32%;
+	background: #ADFF2F;
+	
+}
+/*服务（右侧盒子）*/
+.service{
+	text-align: center;
+	width: 32%;
+	background: #ADFF2F;
+	
+}
+/*开始游戏按钮*/
+#btn{
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	border-style: none;
+	background: white;
+}
+/*移动端的选项卡*/
+#tab{
+	display: none;
+}
+/*移动端盒子*/
+.phonebox{
+	display: none;
+}
+/*PC端背景*/
+.bg{
+	margin-top: 4em;
+}
+.bg ul{
+
+	display: flex;
+	justify-content: space-around;
+}
+.bg ul li{
+	border: 1px solid yellow;
+	width: 100px;
+	height: 100px;
+}
+.bg ul li:hover{
+	border: 1px solid #6a67df;
+}
+.bg ul li img{
+	width: 100px;
+	height: 100px;
+}
+@media only screen and (max-width:414px) {
+.all{
+	display: block;
+}
+/*移动端效果*/
+#gameview{
+	display: block;
+}
+.gamestart{
+	min-height: 128px;
+	display: block;
+	text-align: center;
+	width: 100%;
+	background: #ADFF2F;
+	
+}
+.service{
+	display: none;
+}
+#tab{
+	display:flex;
+}
+#tab span{
+	width: 50%;
+	text-align:center ;
+	background:#ADFF2F;
+	border:2px solid yellow;
+	border-radius: 2px;
+}
+#tab span:hover{
+	opacity:0.6 ;
+}
+.phonebox{
+	min-height: 128px;
+	display:none;
+	text-align: center;
+	width: 100%;
+	background: #ADFF2F;
+}
+/*移动端效果*/
+.bg{
+	margin-top: 0;
+	margin-left: -3em;
+}
+.bg ul li{
+	border: 1px solid yellow;
+	width: 50px;
+	height: 50px;
+}
+.bg ul li img{
+	width: 50px;
+	height: 50px;
+}
+}

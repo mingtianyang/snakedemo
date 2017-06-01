@@ -1,0 +1,11 @@
+CACHE MANIFEST
+#2016-12-26 V1.0.0
+#所有包含如下资源的页面，都将被自动离线缓存到客户端
+./js/jquery-3.1.1.min.js
+./images/1.jpg
+
+NETWORK:
+*
+
+FALLBACK:
+/index.html /404.html

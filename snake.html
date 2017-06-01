@@ -4,34 +4,130 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<title>响应式贪吃蛇1701</title>
-		<style type="text/css">
-			*{
-				margin: 0;
-				padding: 0;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	</head>
 	<body>
+		<div class="all">
+			<div id="tab">
+				<span id="game">GAME</span>
+				<span id="member">MEMBER</span>
+			</div>
+			<div class="gamestart">
+				<h1>开始游戏</h1>
+				0.2秒<input type="range" min="200" max="2000" id="rang" />2秒<br/>
+				<button id="btn">开始</button>
+				<div class="bg">
+					<ul id="myul">
+						<li id="firstbg"><dl>
+							<dt><img src="image/bg1.png"/></dt>
+							<dd>背景1</dd>
+						</dl></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="phonebox">
+				<h1>充值</h1>
+				<button id="btn2">充值</button>
+			</div>
+			<canvas id="gameview" width="500" height="500"></canvas>
+			<div class="service">
+				<h1>会员专属</h1>
+				<div class="chongzhi">
+					
+					<button id="money">充值</button>
+				</div>
+				
+			</div>
+		</div>
 		
-		<canvas id="gameview" width="500" height="500"></canvas>
 	</body>
 	<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/Snake.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     	
-	$(function(){
+
 		//页面中引用类new
+	/*
+	 对两个span标签添加事件监听点击让对应的盒子显示或隐藏*/
+var game=document.getElementById("game");
+game.addEventListener("touchstart",function(event){
+	$(".gamestart").css("display","block");
+	$(".phonebox").css("display","none");
+})
+var member=document.getElementById("member");
+member.addEventListener("touchstart",function(event){
+	$(".gamestart").css("display","none");
+	$(".phonebox").css("display","block");
+})
+$("#btn").click(function(){
+	clearInterval(snakegame.timer);
+	snakegame.move();
+})
+	//点击充值按钮输入内容添加到localstorage中
+	var balance=0;
+	if(!localStorage.balance){
+		localStorage.setItem("balance",parseInt(balance));
+	}
+	//PC端充值
+	$("#money").click(function (){
+	money=Number(prompt("请输入充值金额",""));
+	   
+		localStorage.setItem("balance",money);
+		location=location;
+		loadALL();
+	})
+	//移动端充值
+	//从localstorage中取值显示不同背景
+	$("#btn2").click(function (){
+	money=Number(prompt("请输入充值金额",""));
+	   
+		localStorage.setItem("balance",money);
+		location=location;
+		loadALL();
+	})
+	
+	loadALL();
+	function loadALL(){
+		
+		var keys=localStorage.key(0);
+		var val=localStorage.getItem(keys);
+		console.log(val);
+		
+			
+		if(val<=10&&val>0){
+         	//如果充值金额大于10
+          console.log("充值成功");
+         	for(var i=0;i<2;i++){
+         	$kelong=$("#firstbg").clone(true);
+         	$kelong.find("img").attr("src","image/bg"+(i+1)+".png");
+         	$kelong.find("dd").text("背景"+(i+1));
+         	$kelong.removeAttr("id");
+         	$("#myul").append($kelong);
+         	sd=2;
+         	console.log($kelong);
+         	}$("#firstbg").remove();
+         }else if(val>10){
+         	//如果充值金额大于50	
+         	for(var i=0;i<3;i++){
+         	$kelong=$("#firstbg").clone(true);
+         	$kelong.find("img").attr("src","image/bg"+(i+1)+".png");
+         	$kelong.find("dd").text("背景"+(i+1));
+         	$kelong.removeAttr("id");
+         	$("#myul").append($kelong);
+         	}$("#firstbg").remove();
+         
+         	
+         }
+		
+         
+	}
 		var snakegame=new Snake();
-//				startImg.onload=function(){
-//					snakegame.init();
-//				}
-//			  $("#gameview").click(function(){
-//			  snakegame.start();
-//			  });
-           bgImg.onload=function(){
-           snakegame.open();
+          bgImg.onload=function(){
+          snakegame.start();
            }
-			})
+		
+
 		</script>
 
     </script>
