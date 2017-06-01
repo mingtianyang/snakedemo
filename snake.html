@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>响应式贪吃蛇1701</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="gameview" width="500" height="500"></canvas>
+	</body>
+	<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Snake.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	
+	$(function(){
+		//页面中引用类new
+		var snakegame=new Snake();
+//				startImg.onload=function(){
+//					snakegame.init();
+//				}
+//			  $("#gameview").click(function(){
+//			  snakegame.start();
+//			  });
+           bgImg.onload=function(){
+           snakegame.open();
+           }
+			})
+		</script>
+
+    </script>
+</html>
