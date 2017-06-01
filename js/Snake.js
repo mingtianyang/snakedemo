@@ -31,10 +31,7 @@ function Snake(){
 	/*
 	 1.生成初始化页面点击页面进入游戏
 	 * */
-//	this.init=function(){
-//		this.device();
-//		this.ctx.drawImage(startImg,0,0,500,500);
-//	}
+
 	/*
 	 2.游戏开始，绘制背景、蛇、食物
 	 * */
