@@ -216,10 +216,11 @@ if(!this.isPhone){
 				direct:"west",
 			})
 		}
-//		console.log(this.snakeBodyList);
+		
 		this.snakeBodyList[0].img=westImg;
-		}
 		//2.2.2替换snakeBodyList  数组第一个元素的img替换成westimg图片
+		}
+		
 		
 //		2.2.3遍历snakeBodyList，并画出蛇的初始状态
      for(let i=0;i<this.snakeBodyList.length;i++){
