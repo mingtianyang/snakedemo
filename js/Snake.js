@@ -14,7 +14,6 @@ const startImg=new Image();
 startImg.src="image/start.png";//将欢迎页面放在最后
 const bgImg=new Image();
 bgImg.src="image/background.png";//开始页面
-
 function Snake(){
 	this.canvas=$("#gameview")[0]//canvas画布对象；
 	this.ctx=this.canvas.getContext("2d");//画笔
