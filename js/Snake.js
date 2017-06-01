@@ -170,7 +170,7 @@ if(!this.isPhone){
 	_this.dead();//判断蛇生死，isDead
 		if(_this.isDead){
 			//alert你的最终分数
-//			alert("Your score is:"+_this.score);
+			alert("Your score is:"+_this.score);
 			//重新开始游戏restart（）方法
 			clearInterval(_this.timer);//如果不清除定时器，则速度会不断加快
 			_this.isDead = false;//改变isDead状态，否则，每次直接死掉
