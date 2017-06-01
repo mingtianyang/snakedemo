@@ -158,30 +158,52 @@ function Snake() {
 	this.keyHandler = function(){//键盘事件处理器
 			//事件处理是异步的，所以，无法传递this对象
 		var _this = this;
+		var key = 37 ;
 		document.onkeydown = function(ev){
 			var ev = ev||window.event;
 //			console.log(ev.key+":"+ev.keyCode);
 //			console.log(_this.snakeBodyList);
 			switch(ev.keyCode){
 				case 37://向左
+					if (key == 39) {
+						return ;
+					};
 					_this.snakeBodyList[0].img = westImg;
 					_this.snakeBodyList[0].direct = 'west';
+					key = 37;
+
 				break;
 				case 38://向上
+				if (key == 40) {
+						return ;
+					};
 					_this.snakeBodyList[0].img = northImg;
 					_this.snakeBodyList[0].direct = 'north';
+					key = 38;
+
 				break;
 				case 39://向右
+				if (key == 37) {
+						return ;
+					};
 					_this.snakeBodyList[0].img = eastImg;
 					_this.snakeBodyList[0].direct = 'east';
-				break;
+					key = 39;
+					break;
 				case 40://向下
+				if (key == 38) {
+						return ;
+					};
 					_this.snakeBodyList[0].img = southImg;
 					_this.snakeBodyList[0].direct = 'south';
+					key = 40;
 				break;
 			}
+
+
 		}
 	}
+
 	
 	this.touchHandler = function(){//触屏事件处理器
 		var _this = this;
