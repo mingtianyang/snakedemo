@@ -281,7 +281,7 @@ function Snake() {
 			clearInterval(_this.timer);//如果不清除定时器，则速度会不断加快
 			_this.isDead = false;//改变isDead状态，否则，每次直接死掉
 			_this.snakeBodyList = [];//清除蛇身，便于重新开始游戏，重绘初始界面
-			_this.start();//游戏重新开始
+			_this.startmm();//游戏重新开始
 //			location=location;
 		}else{
 			//3.1.2 false：蛇活着，判断蛇头是否与食物的坐标点一致，如果一致，清空食物数组（多个食物时，可以使用标识位）
